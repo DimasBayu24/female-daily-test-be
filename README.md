@@ -15,7 +15,7 @@ docker-compose up
 2. Postgres database (internally `5432`), forwarded to port `2345`
 
 
-### 2. stop the application
+# 2. stop the application
 
 ```
 docker-compose down
