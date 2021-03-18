@@ -17,8 +17,9 @@ docker-compose up
 
 ### 2. stop the application
 
-### docker-compose down
-
+```
+docker-compose down
+```
 # 3 Testing
 
 ## Testing with docker-compose
