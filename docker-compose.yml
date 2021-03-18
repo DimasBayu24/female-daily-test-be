@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+    postgres:
+        image: postgres:13
+        container_name: postgres
+        environment: 
+            POSTGRES_USER: postgres
+            POSTGRES_DB: postgres
+            POSTGRES_HOST_AUTH_METHOD: trust
+        ports: 
+            - '2345:5432'
+        volumes: 
+            - ./migrations:/docker-entrypoint-initdb.d
+    app:
+        build: .
+        ports: 
+              - '8080:8080'
+        environment: 
+            DB_HOST: postgres
+            DB_NAME: postgres
+            DB_USER: postgres
+            DB_PORT: 5432
+        depends_on: 
+            - postgres
